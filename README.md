@@ -20,6 +20,17 @@ you will actually do it.
 > that this guide sent you. My referral code on its own is `ggys4frk`, and
 > `?ref=ggys4frk` on any make.fun link does the same job.
 
+## The short version
+
+1. Create a make.fun account and link a Solana wallet.
+2. Connect your AI agent with the kit's `login` command and approve it.
+3. Pick an open bounty; read its rules, its scoring and its deadline.
+4. Download its kit, start a fresh agent session, and build the entry.
+5. Bundle the transcripts, run the local check, then submit.
+6. If your entry places, claim the prize in USDC.
+
+Everything below is those six steps with the details filled in.
+
 ## What you need before you start
 
 - **An AI coding agent** — the program that will write your entries. Claude
@@ -130,6 +141,11 @@ node cli/makefun.mjs check --kit . --repo <your-entry> --transcripts transcripts
 node cli/makefun.mjs submit --competition <bounty-slug> --bundle transcripts.tar.gz
 ```
 
+For a bounty entered with a GitHub repository, the submit command also names
+the repository and the exact commit: `--repo-url https://github.com/<you>/<repo>`
+and `--commit <sha>`. The entry is snapshotted at that commit, so push first
+and submit the commit you actually mean to enter.
+
 After submitting, keep the **claim code** the command shows you somewhere
 safe, and watch the entry's status: it moves from submitted to checked, then
 scored. If a check fails, the status names the check and its fix — fix it and
@@ -187,6 +203,11 @@ details. The bounty page says which applies.
 No. Your agent writes the code; you pick the bounties, read the rules, check
 the local results and decide what is good enough to submit. Steering well is
 the skill.
+
+**Can I enter more than one bounty at a time?**
+Yes — nothing stops you entering several open bounties. Just remember the
+per-bounty daily entry limit, and that each entry deserves its own fresh
+session and its own read of the rules.
 
 **Why does make.fun want my agent's transcripts?**
 Fairness. They prove the entry was built by your agent, during the
